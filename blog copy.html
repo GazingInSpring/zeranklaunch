@@ -1,0 +1,434 @@
+
+<body style="background: white;">
+        <style>
+        /* Framer Font Stack */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            color: #1a1a1a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography Hierarchy */
+        h1 {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        p {
+            font-weight: 400;
+            letter-spacing: -0.003em;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e5e5e5 20%, #e5e5e5 80%, transparent 100%);
+            margin: 80px 0;
+        }
+
+        .section-divider-bold {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #d4d4d4 10%, #d4d4d4 90%, transparent 100%);
+            margin: 100px 0;
+        }
+
+        /* Code blocks */
+        pre {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Dank Mono', 'Operator Mono', monospace;
+            font-weight: 400;
+        }
+
+        /* Links */
+        a {
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        /* TL;DR Box Enhancement */
+        .tldr-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+            border-left: 4px solid #4f46e5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Iframe containers for better presentation */
+        .chart-container {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 60px 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .chart-container iframe {
+            border-radius: 8px;
+        }
+
+        /* Code block enhancement */
+        .code-block {
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            overflow-x: auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border: 1px solid #2d2d2d;
+        }
+
+        /* Better list styling */
+        ul.feature-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 20px;
+        }
+
+        ul.feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #4f46e5;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Gradient accent bar */
+        .accent-bar {
+            height: 4px;
+            width: 60px;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6, #4f46e5);
+            border-radius: 2px;
+            margin-bottom: 40px;
+        }
+
+        /* Section headers with subtle line */
+        .section-header {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 32px;
+        }
+
+        .section-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #4f46e5, transparent);
+        }
+
+        /* Image grid enhancement */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .image-grid iframe {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .image-grid iframe:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Caption styling */
+        .caption {
+            color: #666;
+            font-size: 15px;
+            font-style: italic;
+            text-align: center;
+            margin-top: 16px;
+            font-weight: 400;
+        }
+
+        /* Professional spacing */
+        .content-section {
+            margin: 100px 0;
+        }
+    </style>
+    <!-- Main Content -->
+    <main style="max-width: 1050px; margin: 0 auto; padding: 80px 24px;">
+        
+        <!-- Header -->
+        <div style="margin-bottom: 40px;">
+            
+            <div class="accent-bar"></div>
+            <h1 style="font-size: 64px; font-weight: 800; color: #000; margin-bottom: 16px; line-height: 1.1;">Introducing zerank-2</h1>
+            <p style="color: #666; font-size: 14px; margin-bottom: 16px;">Nov 18, 2025</p>
+            <a href="#" style="color: #4f46e5; text-decoration: none; font-size: 15px;">← Back to Blog</a>
+        </div>
+
+        <!-- Hero Image -->
+        <div style="margin: 60px 0; border-radius: 16px; overflow: hidden;">
+            <img src="zerank2launchimages/ekilouLxIk8YHa7uElhK9rnzWvU.png.avif" alt="zerank-2" style="width: 100%; display: block;">
+        </div>
+
+        <!-- Share buttons -->
+        <div style="margin: 40px 0; display: flex; gap: 12px; align-items: center;">
+            <span style="color: #999; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">SHARE</span>
+            <a href="#" style="color: #666; font-size: 20px;">📘</a>
+            <a href="#" style="color: #666; font-size: 20px;">🐦</a>
+            <a href="#" style="color: #666; font-size: 20px;">💼</a>
+            <a href="#" style="color: #666; font-size: 20px;">📱</a>
+            <a href="#" style="color: #666; font-size: 20px;">✉️</a>
+        </div>
+
+        <!-- Main title repeat -->
+        <h2 class="section-header" style="font-size: 40px; font-weight: 600; color: #000; margin: 80px 0 40px 0; line-height: 1.2;">Introducing zerank-2</h2>
+
+        <!-- TL;DR Box -->
+        <!-- Replace the style attribute with class: -->
+        <div class="tldr-box" style="padding: 32px; margin: 40px 0; border-radius: 8px;">
+            <p style="color: #000; font-size: 17px; line-height: 1.7; margin-bottom: 20px;">
+                Today, we're releasing <strong>zerank-2</strong>: the world's best reranker, purpose-built to address some of the most important problems in information retrieval.
+            </p>
+            <p style="color: #000; font-size: 17px; line-height: 1.7; margin-bottom: 20px;">
+                Rerankers are a crucial part of what makes search and RAG pipelines actually work in production — yet, even industry-standard rerankers (including Cohere's rerank-3.5) fail at capturing nuanced relevance for real-world queries.
+            </p>
+            <p style="color: #000; font-size: 17px; line-height: 1.7; margin-bottom: 20px;">
+                <strong>zerank-2 outperforms every other reranker on both accuracy and latency — at half the price.</strong>
+            </p>
+            <p style="color: #000; font-size: 17px; line-height: 1.7; margin-bottom: 20px;">
+                It excels at multilingual and cross-lingual data, follows user (and agent) instructions precisely, and is robust to those complex aggregation queries common in enterprise AI workflows.
+            </p>
+            <p style="color: #000; font-size: 17px; line-height: 1.7; margin-bottom: 0;">
+                Additionally, we've normalized our relevance scores and added a confidence statistic, allowing for more consistent interpretation of reranker output across all kinds of queries and domains.
+            </p>
+        </div>
+        <div class="section-divider"></div>
+        <!-- Section -->
+        <h2 class="section-header" style="font-size: 36px; color: #000; margin: 80px 0 0 0;">Real Stories of How Rerankers Break in Production</h2>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            From early stage startups to Fortune 50 AI teams, we kept hearing similar production failure modes:
+        </p>
+        <ul class="feature-list" style="padding: 0; margin: 32px 0;">
+            <li style="color: #444; font-size: 17px; line-height: 1.7;">
+                <strong>"It works okay in English, but performance tanks for multilingual queries"</strong>
+            </li>
+            <li style="color: #444; font-size: 17px; line-height: 1.7;">
+                <strong>"We need to set a relevance threshold, but don't know how to interpret scores consistently."</strong>
+            </li>
+            <li style="color: #444; font-size: 17px; line-height: 1.7;">
+                <strong>"It can't understand our domain terminology or specific use case without slow LLM query rewrites"</strong>
+            </li>
+            <li style="color: #444; font-size: 17px; line-height: 1.7;">
+                <strong>"Prompting it with instructions breaks it entirely"</strong>
+            </li>
+            <li style="color: #444; font-size: 17px; line-height: 1.7;">
+                <strong>"Documents that would provide <em>helpful</em> context to our agent get scored too low, just because they don't directly answer the question."</strong>
+            </li>
+        </ul>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            Many rerankers overfit on public benchmarks, yet don't generalize to these real production issues.
+        </p>
+
+        <!-- Section -->
+        <h2 class="section-header" style="font-size: 36px; font-weight: 700; color: #000; margin: 80px 0 32px 0;">Introducing zerank-2</h2>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            Today, we're releasing <strong>zerank-2</strong>, a state-of-the-art cross-encoder reranker built specifically to solve some of the most common production failures.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            zerank-2 was trained with our new zELO training pipeline, which converts pairwise preferences into absolute Elo scores. <a href="https://arxiv.org/abs/2509.12541" style="color: #4f46e5; text-decoration: underline;">You can read more about our methodology here</a>.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 48px;">
+            The model is already available <a href="https://docs.zeroentropy.dev/models" style="color: #4f46e5; text-decoration: underline;">behind our API</a>, and on <a href="https://huggingface.co/zeroentropy" style="color: #4f46e5; text-decoration: underline;">HuggingFace</a>.
+        </p>
+
+        <!-- Benchmark Image -->
+        <div style="margin: 60px 0;">
+            <iframe src="zerank2launchimages/benchmarkperformance.html" style="width: 100%; height: 600px; border: none; border-radius: 8px;"></iframe>
+        </div>
+
+        <!-- Domain Performance Image -->
+        <div style="margin: 60px 0;">
+            <iframe src="zerank2launchimages/rerankerperformancebydomain.html" style="width: 100%; height: 600px; border: none; border-radius: 8px;"></iframe>
+        </div>
+        
+        <div class="section-divider-bold"></div>
+        <!-- What zerank-2 solves -->
+        <h2 class="section-header" style="font-size: 36px; font-weight: 700; color: #000; margin: 80px 0 32px 0;">What zerank-2 solves</h2>
+
+        <!-- 1. Native Instruction-Following -->
+        <h3 style="font-size: 28px; font-weight: 600; color: #000; margin: 60px 0 24px 0;">1. Native Instruction-Following</h3>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            Providing instructions to a reranker model can significantly boost accuracy results in most situations.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 32px;">
+            With zerank-2, you can now append specific instructions, lists of abbreviations, business context, or user-specific memories to influence how results get reranked.
+        </p>
+
+        <!-- Code Block -->
+        <div style="background: #1e1e1e; border-radius: 8px; padding: 24px; margin: 32px 0; overflow-x: auto;">
+            <pre style="color: #d4d4d4; font-family: 'Monaco', 'Menlo', monospace; font-size: 14px; margin: 0; line-height: 1.6;"><span style="color: #808080;">&lt;query&gt;</span> <span style="color: #ce9178;">"IMO experience"</span> <span style="color: #808080;">&lt;/query&gt;</span>
+<span style="color: #808080;">&lt;instructions&gt;</span> You are looking for engineering talent for an AI startup in SF. <span style="color: #808080;">&lt;/instructions&gt;</span>
+
+Document: <span style="color: #ce9178;">"Candidate experience: International Math Olympiads"</span>
+ZeroEntropy zerank-2:
+ZeroEntropy zerank-2 <span style="color: #c586c0;">with</span> instructions: <span style="color: #b5cea8;">0.2141650169574414</span></pre>
+        </div>
+
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin: 32px 0;">
+            zerank-2 also knows to give appropriate scores to documents not directly answering the user's query, but providing useful context which ensures diversity and quality of the response.
+        </p>
+
+        <!-- Code Block -->
+        <div style="background: #1e1e1e; border-radius: 8px; padding: 24px; margin: 32px 0; overflow-x: auto;">
+            <pre style="color: #d4d4d4; font-family: 'Monaco', 'Menlo', monospace; font-size: 14px; margin: 0; line-height: 1.6;">Query: <span style="color: #ce9178;">"What should I cook for dinner?"</span>
+
+Document: <span style="color: #ce9178;">"I'm allergic to nuts."</span>
+Cohere rerank-3.5: <span style="color: #b5cea8;">0.023</span>
+GPT5.1 Thinking: <span style="color: #b5cea8;">0.51</span> 
+ZeroEntropy zerank-2: <span style="color: #b5cea8;">0.25</span>  <span style="color: #6a9955;">#high score because this is helpful context for an agent</span></pre>
+        </div>
+
+        <!-- Instruction Following Image -->
+        <div style="margin: 60px 0;">
+            <iframe src="zerank2launchimages/mairperformance.html" style="width: 100%; height: 600px; border: none; border-radius: 8px;"></iframe>
+        </div>
+
+        <!-- 2. True Multilingual Parity -->
+         <div class="section-divider"></div>
+        <h3 style="font-size: 28px; font-weight: 600; color: #000; margin: 60px 0 24px 0;">2. True Multilingual Parity</h3>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            Most rerankers exhibit a strong <strong>modality gap</strong> between languages, ranking the very same document, translated into another language, lower than its English equivalent. That gap widens even more on non-English to non-English tasks.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 32px;">
+            We trained zerank-2 to be robust to multilinguality across 100+ languages with near-English performance across major languages, even on challenging scripts (Chinese, Arabic), and code-switching queries (Spanglish, Hinglish).
+        </p>
+
+        <!-- Multilingual Images Grid -->
+        <div style="margin: 60px 0;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                <iframe src="zerank2launchimages/zerank_zerank-2-better.html" style="width: 100%; height: 850px; border: 1px solid #e5e5e5; border-radius: 8px;"></iframe>
+                <iframe src="zerank2launchimages/interactive_dashboard.html" style="width: 100%; height: 850px; border: 1px solid #e5e5e5; border-radius: 8px;"></iframe>
+            </div>
+            <p style="color: #666; font-size: 15px; font-style: italic; text-align: center; margin-top: 16px;">
+                Identical queries and documents translated across languages provide a controlled ablation of multi-lingual and cross-lingual performance.
+            </p>
+        </div>
+
+        <!-- 3. Score Bias Adjustment -->
+         <div class="section-divider"></div>
+        <h3 style="font-size: 28px; font-weight: 600; color: #000; margin: 60px 0 24px 0;">3. Score Bias Adjustment and New Confidence Score</h3>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            Most rerankers' scores are "relatively" correct yet nonetheless "absolutely" meaningless: a score of 0.7 might indicate 90% relevance in one case, while 0.7 from another, might mean 30%.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            Worse, some rerankers, like Voyage rerank-3.5, always output scores around 0.5, regardless of the true relevancy of the document. This makes setting a threshold your agent or workflow can trust to filter low-quality results almost impossible.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            <strong>We fixed it.</strong>
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            Through careful calibration across query types and domains, every zerank-2 0.8 score <em>actually</em> means ~80% relevance, consistently, and predictably.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 32px;">
+            Also, it now even outputs a new <strong>Confidence Score</strong>, to give a measure of its own confidence.
+        </p>
+
+        <!-- Grid Image -->
+        <div style="margin: 60px 0;">
+            <img src="zerank2launchimages/grid.svg" alt="Confidence Score Grid" style="width: 100%; display: block;">
+        </div>
+
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 32px;">
+            The graphs above show this in action. Voyage and Cohere scores scattered across the space, making any single threshold fail. zerank-2 correlates linearly with ground truth scores much more robustly.
+        </p>
+
+        <!-- 4. SQL-Style Queries -->
+         <div class="section-divider"></div>
+        <h3 style="font-size: 28px; font-weight: 600; color: #000; margin: 60px 0 24px 0;">4. SQL-Style Queries and Aggregation Queries</h3>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 24px;">
+            It was surprising to discover just how many unstructured queries from our clients actually resemble structured SQL. Yet rerankers are not only not robust to these at all, they often degrade performance against just doing nothing.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 32px;">
+            Even a mere "ORDER BY" on quantitative values confuses every reranker, returning "ordered" results often worse than first-pass retrieval embedding models:
+        </p>
+
+        <!-- Code Block -->
+        <div style="background: #1e1e1e; border-radius: 8px; padding: 24px; margin: 32px 0; overflow-x: auto;">
+            <pre style="color: #d4d4d4; font-family: 'Monaco', 'Menlo', monospace; font-size: 14px; margin: 0; line-height: 1.6;">Query: <span style="color: #ce9178;">"Which reranker is the fastest?"</span>
+Doc 1: Jina's reranker: rerank-m0 • 300 ms latency
+Doc 2: Cohere's reranker: rerank-3.5 • 120 ms latency
+Doc 3: ZeroEntropy's reranker: zerank-2 • 60 ms latency
+
+<span style="color: #f48771;">❌ Cohere rerank 3.5 prefers to put itself first</span>
+<span style="color: #4ec9b0;">✅ ZeroEntropy ranks these perfectly</span></pre>
+        </div>
+
+        <!-- Rank vs Latency Images -->
+        <div style="margin: 60px 0;">
+            <img src="zerank2launchimages/rankvslatency.png" alt="Rank vs Latency" style="width: 100%; display: block; border-radius: 8px;">
+        </div>
+
+        <div style="margin: 60px 0;">
+            <img src="zerank2launchimages/scorevslatency.png" alt="Score vs Latency" style="width: 100%; display: block; border-radius: 8px;">
+        </div>
+
+        <!-- Get Started Section -->
+         
+        <div class="section-divider-bold"></div>
+        <h2 class="section-header" style="font-size: 36px; font-weight: 700; color: #000; margin: 80px 0 32px 0;">Get Started</h2>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 32px;">
+            Available now via the <a href="https://dashboard.zeroentropy.dev" style="color: #4f46e5; text-decoration: underline;">ZeroEntropy API</a>:
+        </p>
+
+        <!-- Code Block -->
+        <div style="background: #1e1e1e; border-radius: 8px; padding: 24px; margin: 32px 0; overflow-x: auto;">
+            <pre style="color: #d4d4d4; font-family: 'Monaco', 'Menlo', monospace; font-size: 14px; margin: 0; line-height: 1.6;"><span style="color: #c586c0;">from</span> zeroentropy <span style="color: #c586c0;">import</span> ZeroEntropy
+
+ze = <span style="color: #dcdcaa;">ZeroEntropy</span>(api_key=<span style="color: #ce9178;">"your_api_key"</span>)
+
+<span style="color: #6a9955;"># Pointwise reranking</span>
+results = ze.models.<span style="color: #dcdcaa;">rerank</span>(
+    model=<span style="color: #ce9178;">"zerank-2"</span>
+    query=<span style="color: #ce9178;">"your query"</span>,
+    documents=[<span style="color: #ce9178;">"document a"</span>, <span style="color: #ce9178;">"document b"</span>],
+)</pre>
+        </div>
+
+        <!-- Be a Zero, be a hero -->
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 16px;">
+            <strong>Drop-in replacement</strong> for zerank-1 or any existing reranker you run in prod, with 1 line of code change.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 16px;">
+            <strong>Documentation</strong>: <a href="http://docs.zeroentropy.dev/zerank-2" style="color: #4f46e5; text-decoration: underline;">zerank-2 docs</a>
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 16px;">
+            <strong>Pricing</strong>: $0.025/1M tokens, which is 50% cheaper than all other commercial rerankers.
+        </p>
+        <p style="color: #444; font-size: 17px; line-height: 1.7; margin-bottom: 40px;">
+            <strong>Get in touch</strong>: <a href="https://discord.gg/5mkQCTnmY9" style="color: #4f46e5; text-decoration: underline;">Discord community</a> or <a href="mailto:contact@zeroentropy.dev" style="color: #4f46e5; text-decoration: underline;">contact@zeroentropy.dev</a>
+        </p>
+
+    </main>
