@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedding Model Comparison</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#fafafa;-webkit-font-smoothing:antialiased;padding:40px 20px;overflow:hidden}
+.container{max-width:720px;margin:0 auto;background:#fff;border-radius:16px;border:1px solid #e5e5e5;box-shadow:0 4px 24px rgba(0,0,0,.06);padding:32px 40px}
+h2{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:3px;color:#111}
+.subtitle{font-size:13px;color:#999;line-height:1.5;margin-bottom:20px}
+.chart-wrap{position:relative;height:520px;width:100%}
+@media(max-width:640px){.container{padding:20px}.chart-wrap{height:380px}}
+h2{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:3px;color:#111;text-align:center}
+.subtitle{font-size:13px;color:#999;line-height:1.5;margin-bottom:20px;text-align:center}
+/* ── Embedded mode ── */
+body.embedded{padding:0;margin:0;background:transparent;overflow:hidden}
+body.embedded .container{max-width:100%;border:none;box-shadow:none;border-radius:0;padding:8px 16px}
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>No Trade-Offs</h2>
+    <p class="subtitle">Accuracy (Recall@100) · Affordability (lower $/1M tokens) · Speed (lower latency). Outer is better.</p>
+    <div class="chart-wrap">
+        <canvas id="spiderChart"></canvas>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+/* ── Detect embed mode from ?embed=1 ── */
+if (new URLSearchParams(window.location.search).get('embed') === '1') {
+    document.body.classList.add('embedded');
+}
+
+const DATA = {"labels": ["Accuracy", "Affordability", "Speed"], "datasets": [{"label": "zembed-1", "data": [1.0, 1.0, 1.0], "borderColor": "rgba(79, 70, 229, 0.8)", "backgroundColor": "rgba(79, 70, 229, 0.15)", "borderWidth": 3, "pointRadius": 5, "pointHoverRadius": 7, "raw": {"recall": 0.7178, "cost": "$0.05/1M tok", "latency": "280ms"}}, {"label": "Gemini", "data": [0.2621, 0.75, 0.2], "borderColor": "rgba(22, 163, 74, 0.8)", "backgroundColor": "rgba(22, 163, 74, 0.10)", "borderWidth": 1.5, "pointRadius": 3, "pointHoverRadius": 5, "raw": {"recall": 0.6655, "cost": "$0.07/1M tok", "latency": "2000ms"}}, {"label": "Cohere Embed v4", "data": [0.2, 0.3, 0.4326], "borderColor": "rgba(225, 29, 72, 0.8)", "backgroundColor": "rgba(225, 29, 72, 0.10)", "borderWidth": 1.5, "pointRadius": 3, "pointHoverRadius": 5, "raw": {"recall": 0.6611, "cost": "$0.12/1M tok", "latency": "1500ms"}}, {"label": "OpenAI Large", "data": [0.4324, 0.2, 0.6651], "borderColor": "rgba(0, 0, 0, 0.8)", "backgroundColor": "rgba(0, 0, 0, 0.10)", "borderWidth": 1.5, "pointRadius": 3, "pointHoverRadius": 5, "raw": {"recall": 0.6776, "cost": "$0.13/1M tok", "latency": "1000ms"}}]};
+
+new Chart(document.getElementById('spiderChart').getContext('2d'), {
+    type: 'radar',
+    data: DATA,
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            r: {
+                min: 0,
+                max: 1.05,
+                ticks: { display: false, stepSize: 0.2 },
+                grid: { color: '#e5e5e5', lineWidth: 1 },
+                angleLines: { color: '#e5e5e5' },
+                pointLabels: {
+                    font: { size: 14, family: 'Inter', weight: '600' },
+                    color: '#333',
+                },
+            },
+        },
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    usePointStyle: true,
+                    pointStyle: 'circle',
+                    padding: 20,
+                    font: { size: 12, family: 'Inter' },
+                },
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(ctx) {
+                        const raw = ctx.dataset.raw;
+                        const axis = DATA.labels[ctx.dataIndex];
+                        let detail = '';
+                        if (axis === 'Accuracy') detail = 'Recall@100: ' + raw.recall;
+                        else if (axis === 'Affordability') detail = 'Cost: ' + raw.cost;
+                        else if (axis === 'Speed') detail = 'Latency: ' + raw.latency;
+                        return ctx.dataset.label + ': ' + detail;
+                    },
+                },
+            },
+        },
+    },
+});
+</script>
+</body>
+</html>
