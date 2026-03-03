@@ -252,7 +252,7 @@ function buildFlow() {
 function getStepDef(key) {
     if (key === 'deploy') return {
         q: 'How will you deploy?',
-        detail: '[build Mar 03 09:02:19 PST / 9c95e614] Our API handles hosting, scaling, and availability out of the box. Self-hosted VPC runs on your infrastructure behind a private endpoint\u2009\u2014\u2009your data never leaves your network.',
+        detail: '[build Mar 03 09:13:42 PST / fb13a5ea] Our API handles hosting, scaling, and availability out of the box. Self-hosted VPC runs on your infrastructure behind a private endpoint\u2009\u2014\u2009your data never leaves your network.',
         choices: [
             {val:'api', label:'ZeroEntropy API', sub:'serverless, pay per token'},
             {val:'vpc', label:'Self-hosted VPC', sub:'your cloud, your network'},
@@ -400,7 +400,7 @@ function renderStep() {
                 buildFlow();
                 flowIdx = flow.indexOf(btn.dataset.key)+1;
                 if (btn.dataset.key === 'deploy' && btn.dataset.val === 'api') {
-                    showCallout('Your endpoint latency is <span class="callout-num">45 ms</span> p50. <span class="callout-dim">Cohere Embed 4 is ~55 ms. OpenAI v3 is ~50 ms. Voyage 4 is ~60 ms.</span>');
+                    showCallout('Your endpoint latency is <span class="callout-num">280 ms</span> p50. <span class="callout-dim">At 1 QPS, Cohere Embed 4 is ~ 650ms. OpenAI v3 is ~1000 ms. Voyage 4 is ~650 ms.</span>');
                 } else { hideCallout(); }
                 renderTrail();
                 renderStep();
@@ -465,7 +465,7 @@ function resolve() {
     document.getElementById('recoName').textContent = best.name;
     document.getElementById('recoDesc').textContent = best.dims+'-dim '+qLabel+' \u00b7 '+fmtB(best.bytesPerVec)+' per vector';
 
-    const latVal = answers.deploy === 'api' ? '45 ms' : '\u2264 '+answers.latency+' ms';
+    const latVal = answers.deploy === 'api' ? '280 ms' : '\u2264 '+answers.latency+' ms';
     document.getElementById('recoGrid').innerHTML =
         '<div class="reco-stat"><div class="rv">'+fmtB(best.bytesPerVec)+' '+storageDeltaHtml(best.bytesPerVec, baseB)+'</div><div class="rl">Bytes / vector</div></div>'
         +'<div class="reco-stat"><div class="rv">'+(best.accuracy*100).toFixed(1)+'% '+accDeltaHtml(best.accuracy, baseAcc)+'</div><div class="rl">Recall@10</div></div>'
@@ -550,7 +550,7 @@ function renderScatter(rows) {
         }}},
         scales:{
             x:{title:{display:true,text:xLabel,font:{size:11,family:'Inter'}},grid:{color:'#f0f0f0'}},
-            y:{title:{display:true,text:'Recall@10',font:{size:11,family:'Inter'}},min:0,max:1,grid:{color:'#f0f0f0'}},
+            y:{title:{display:true,text:'Recall@10',font:{size:11,family:'Inter'}},min:0.1,max:0.6,grid:{color:'#f0f0f0'}},
         },
     });
     const mkDs=(xfn)=>[{data:pts.map(p=>({x:xfn(p),y:p.y})),backgroundColor:pts.map(p=>p.color),
