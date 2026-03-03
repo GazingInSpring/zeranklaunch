@@ -252,7 +252,7 @@ function buildFlow() {
 function getStepDef(key) {
     if (key === 'deploy') return {
         q: 'How will you deploy?',
-        detail: '[build Mar 03 08:47:21 PST / f7b0d09e] Our API handles hosting, scaling, and availability out of the box. Self-hosted VPC runs on your infrastructure behind a private endpoint\u2009\u2014\u2009your data never leaves your network.',
+        detail: 'Our API handles hosting, scaling, and availability out of the box. Self-hosted VPC runs on your infrastructure behind a private endpoint\u2009\u2014\u2009your data never leaves your network.',
         choices: [
             {val:'api', label:'ZeroEntropy API', sub:'serverless, pay per token'},
             {val:'vpc', label:'Self-hosted VPC', sub:'your cloud, your network'},
